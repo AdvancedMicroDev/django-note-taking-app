@@ -12,6 +12,11 @@ This is a simple note taking app built with Django and Django Rest Framework.
 - Update a Note: Update an existing note. Only the owner of the note and users it is shared with can update it.
 - Get Note Version History: Retrieve the version history of a note. Only the owner of the note and users it is shared with can retrieve the version history.
 
+## Try the Deployed Application:
+* The application has been <mark>deployed</mark> to Python Anywhere website & can be accessed on:
+`gautampamnani.pythonanywhere.com`
+* All the following routes would work as intended. For ex. `gautampamnani.pythonanywhere.com/signup` & so on.
+
 ## Installation
 
 1. **Clone this repository**: This will create a copy of this project on your local machine.
