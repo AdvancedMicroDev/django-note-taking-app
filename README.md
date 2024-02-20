@@ -20,7 +20,7 @@ This is a simple note taking app built with Django and Django Rest Framework.
     ```
 2. **Navigate to the project directory**: Change your current working directory to the project directory.
     ```bash
-    cd notetakingapp
+    cd NoteTakingApp
     ```
 3. **Create a virtual environment**: A virtual environment is a way to keep the project's dependencies isolated from other projects.
     ```bash
@@ -47,7 +47,7 @@ This is a simple note taking app built with Django and Django Rest Framework.
 Now you can access the API at `http://localhost:8000`.
 
 ## Testing 
-* TODO Rewrite failing tests -> 5P 2F
+> TODO Rewrite failing tests -> <mark>5P 2F</mark>
 
 To run the tests, use the following command:
 
@@ -55,7 +55,7 @@ To run the tests, use the following command:
 python manage.py test
 ```
 
-## Admin Credentials:
+## <mark>Admin</mark> Credentials:
 * username: gautam
 * password: Helloworld^^
 
@@ -69,5 +69,7 @@ Here are *some examples* of how you can use the API:
 5. Share a Note: To share a note with other users, send a POST request to /notes/share with the note ID and usernames in the request body.
 6. Update a Note: To update an existing note, send a PUT request to /notes/{id} with the new content in the request body.
 7. Get Note Version History: To retrieve the version history of a note, send a GET request to /notes/version-history/{id}.
+
+> You can also visit the admin panel `(http://localhost:8000/admin)` using the above admin credentials & do the same on an interactive UI.
 
 **For more details about the API, please refer to the source code.**
