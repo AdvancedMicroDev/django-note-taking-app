@@ -68,7 +68,7 @@ Here are *some examples* of how you can use the API:
 4. Get a Note: To retrieve a specific note, send a GET request to /notes/{id}.
 5. Share a Note: To share a note with other users, send a POST request to /notes/share with the note ID and usernames in the request body.
 6. Update a Note: To update an existing note, send a PUT request to /notes/{id} with the new content in the request body.
-7. Get Note Version History: To retrieve the version history of a note, send a GET request to /notes/version-history/{id}.
+7. Get Note Version History: To retrieve the version history of a note, send a GET request to notes/version-history/{id}/.
 
 > You can also visit the admin panel `(http://localhost:8000/admin)` using the above admin credentials & do the same on an interactive UI.
 

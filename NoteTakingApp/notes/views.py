@@ -1,15 +1,14 @@
-# from django.shortcuts import render
 # from django.core.validators import validate_email
 # from django.contrib.auth.password_validation import validate_password
 # from django.core.exceptions import ValidationError
 from notes.models import Note, NoteUpdate
 from notes.serializers import UserSerializer, LoginSerializer
 from django.views.decorators.csrf import csrf_exempt
-from django.http import JsonResponse
+from django.http import HttpResponse, JsonResponse
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, render
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.authtoken.models import Token
@@ -19,6 +18,9 @@ from rest_framework.permissions import AllowAny
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from rest_framework.authentication import TokenAuthentication
 
+# Create your views here.
+def home_view(request,*args, **kwargs):
+    return render(request, 'home.html')
 
 class LoginView(APIView):
     permission_classes = (AllowAny,)

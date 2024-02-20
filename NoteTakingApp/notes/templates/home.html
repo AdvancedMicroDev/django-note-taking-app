@@ -1,0 +1,81 @@
+{% extends 'base.html' %} {% block title %} Home Page {% endblock %}
+{% block content %}
+<br>
+<div class="card">
+    <div class="card-header">
+        1. User Registration
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Endpoint : POST /signup</h5>
+      <p class="card-text">Allows users to create an account by providing necessary information such as username, email, and password.</p>
+      <a href="http://127.0.0.1:8000/signup" class="btn btn-primary">Sign Up</a>
+    </div>
+</div>
+<br>
+<div class="card">
+    <div class="card-header">
+        2. User Login
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Endpoint : POST /login</h5>
+      <p class="card-text">Functionality: Allows users to log in to their account by providing their credentials (username/email and password).</p>
+      <a href="http://127.0.0.1:8000/login" class="btn btn-primary">Login</a>
+    </div>
+</div>
+<br>
+<div class="card">
+    <div class="card-header">
+        3. Create new note
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Endpoint : POST /notes/create</h5>
+      <p class="card-text">Functionality: Create a new note, only authenticated users can create a new note.</p>
+      <a href="http://127.0.0.1:8000//notes/create" class="btn btn-primary">Create Note</a>
+    </div>
+</div>
+<br>
+<div class="card">
+    <div class="card-header">
+        4. Get a note
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Endpoint : GET /notes/{id}</h5>
+      <p class="card-text">Functionality: GET a note by its id. Only authenticated users. A note is viewable by its owner and the shared users only.</p>
+      <a href="http://127.0.0.1:8000//notes/{id}" class="btn btn-primary">Get Note</a>
+    </div>
+</div>
+<br>
+<div class="card">
+    <div class="card-header">
+        5. Share a note
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Endpoint : POST /notes/share</h5>
+      <p class="card-text">Functionality: Share a note with other users. You can parse multiple users in this request. Once the note admin executes this POST api, the users embedded in the request body will be able to view and edit the note.</p>
+      <a href="http://127.0.0.1:8000//notes/share" class="btn btn-primary">Share Note</a>
+    </div>
+</div>
+<br>
+<div class="card">
+    <div class="card-header">
+        6. Update a note
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Endpoint : PUT /notes/{id}</h5>
+      <p class="card-text">Functionality: The note will be editable by admin, and all the shared users. All the users who have access to the note will be able to perform an edit anywhere on the note. For the sake of simplicity, let’s assume no existing sentences can be edited. But new sentences can be added in between existing lines of the note. All the updates to the notes need to be tracked with a timestamp, and stored somewhere.</p>
+      <a href="http://127.0.0.1:8000//notes/{id}" class="btn btn-primary">Update Note</a>
+    </div>
+</div>
+<br>
+<div class="card">
+    <div class="card-header">
+        7. Get note version history
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Endpoint : GET notes/version-history/{id}</h5>
+      <p class="card-text">Functionality: Accessible by users having access only. GET the version history of the note. This includes all the changes made to the note, since it has been created. The response will contain a list of timestamp, user who made the change, and the changes made to the note since its creation. If possible you can track the line number of change as well.</p>
+      <a href="http://127.0.0.1:8000/notes/version-history/{id}" class="btn btn-primary">Note version history</a>
+    </div>
+</div>
+
+{% endblock %}

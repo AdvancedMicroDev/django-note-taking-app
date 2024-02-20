@@ -17,22 +17,24 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from notes.views import (
-    signup, 
+    home_view,
+    signup,
     login_view, 
     create_note, 
     get_note, 
     share_note, 
     update_note, 
-    get_note_history
+    get_note_history,
 )
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('signup', signup, name='signup'),
-    path('login', login_view, name='login'),
-    path('notes/create', create_note, name='create_note'),
-    path('notes/<int:note_id>', get_note, name='get_note'),
-    path('notes/share', share_note, name='share_note'),
-    path('notes/<int:note_id>/update', update_note, name='update_note'),
-    path('notes/<int:note_id>/history', get_note_history, name='get_note_history'),
+    path('', home_view, name='home'),
+    path('signup/', signup, name='signup'),
+    path('login/', login_view, name='login'),
+    path('notes/create/', create_note, name='create_note'),
+    path('notes/<int:note_id>/', get_note, name='get_note'),
+    path('notes/share/', share_note, name='share_note'),
+    path('notes/<int:note_id>/', update_note, name='update_note'),
+    path('notes/version-history/<int:note_id>/', get_note_history, name='get_note_history'),
 ]
